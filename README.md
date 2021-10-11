@@ -9,7 +9,8 @@ While Security Command Center provides a wonderful set of curated findings, the 
 Download the latest gcloud SDK
 https://cloud.google.com/sdk/docs/
 
-### Require permissions 
+### Require security command center permissions 
+```
 securitycenter.containerthreatdetectionsettings.calculate
 securitycenter.containerthreatdetectionsettings.update
 
@@ -21,6 +22,7 @@ securitycenter.securityhealthanalyticssettings.update
 
 securitycenter.websecurityscannersettings.calculate
 securitycenter.websecurityscannersettings.update
+```
 
 ### Update SCC write settings api quota
 https://cloud.google.com/security-command-center/quotas
@@ -50,6 +52,7 @@ $ ./describe_scc_services_status.sh
 ```
 
 ### Detective logging alerts
+```
 protoPayload.authorizationInfo.permission="securitycenter.securityhealthanalyticssettings.update" AND protoPayload.request.securityHealthAnalyticsSettings.serviceEnablementState="DISABLED"
 
 protoPayload.authorizationInfo.permission="securitycenter.websecurityscannersettings.update" AND protoPayload.request.websecurityscannersettings.serviceEnablementState="DISABLED"
@@ -57,7 +60,7 @@ protoPayload.authorizationInfo.permission="securitycenter.websecurityscannersett
 protoPayload.authorizationInfo.permission="securitycenter.eventthreatdetectionsettings.update" AND protoPayload.request.eventthreatdetectionsettings.serviceEnablementState="DISABLED"
 
 protoPayload.authorizationInfo.permission="securitycenter.containerthreatdetectionsettings.update" AND protoPayload.request.containerthreatdetectionsettings.serviceEnablementState="DISABLED"
-
+```
 ### External Documentation
 https://cloud.google.com/security-command-center/docs how-to-use-security-health-analytics#enable_and_disable_detectors
 https://cloud.google.com/security-command-center/docs/how-to-configure-security-command-center
