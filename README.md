@@ -25,7 +25,7 @@ securitycenter.websecurityscannersettings.update
 ```
 
 ### Update SCC write settings api quota
-https://cloud.google.com/security-command-center/quotas
+[How to update Security Command Center quotas](https://cloud.google.com/security-command-center/quotas)
 
 ###  Set required organization name variable 
 ```
@@ -62,8 +62,8 @@ protoPayload.authorizationInfo.permission="securitycenter.eventthreatdetectionse
 protoPayload.authorizationInfo.permission="securitycenter.containerthreatdetectionsettings.update" AND protoPayload.request.containerthreatdetectionsettings.serviceEnablementState="DISABLED"
 ```
 ### External Documentation
-https://cloud.google.com/security-command-center/docs how-to-use-security-health-analytics#enable_and_disable_detectors
-https://cloud.google.com/security-command-center/docs/how-to-configure-security-command-center
+[Security Health Analytics detectors disabled by default](https://cloud.google.com/security-command-center/docs/how-to-use-security-health-analytics#enable_and_disable_detectors)
+[How to configure Security Command Center](https://cloud.google.com/security-command-center/docs/how-to-configure-security-command-center)
 
 ### To Do
 Expand to alert on submodules that are not enables. 
