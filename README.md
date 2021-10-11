@@ -37,9 +37,9 @@ $ export org_name="example.com"
 ```
 ### Update default variable to remove services
 By default the script will enable all four scc services, which might not be desired especially for container threat detection. If desired the variable can be updated in the script.
-
+```
 export services=("container-threat-detection" "event-threat-detection" "security-health-analytics" "web-security-scanner")
-
+```
 ### Run script to enable all services at the organization,folder,and projects layers
 ```
 $ ./enable_scc_services.sh 
@@ -67,4 +67,4 @@ https://cloud.google.com/security-command-center/docs/how-to-configure-security-
 
 ### To Do
 Expand to alert on submodules that are not enables. 
-Remove sleep when quota has been updated
+Remove sleep when quota has been updated.
