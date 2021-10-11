@@ -40,6 +40,8 @@ By default the script will enable all four scc services, which might not be desi
 ```
 export services=("container-threat-detection" "event-threat-detection" "security-health-analytics" "web-security-scanner")
 ```
+## Implementation
+
 ### Run script to enable all services at the organization,folder,and projects layers
 ```
 $ ./enable_scc_services.sh 
