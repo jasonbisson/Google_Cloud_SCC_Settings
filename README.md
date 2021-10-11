@@ -45,7 +45,7 @@ export services=("container-threat-detection" "event-threat-detection" "security
 $ ./enable_scc_services.sh 
 
 ```
-### Analyze the details of the submodules of the services at the organization,folder,and projects layers
+### Analyze the details of the modules of the services at the organization,folder,and projects layers
 ```
 $ ./describe_scc_services_status.sh 
 
