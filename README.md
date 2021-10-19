@@ -69,8 +69,3 @@ protoPayload.authorizationInfo.permission="securitycenter.containerthreatdetecti
 [Security Health Analytics detectors disabled by default](https://cloud.google.com/security-command-center/docs/how-to-use-security-health-analytics#enable_and_disable_detectors)
 
 [How to configure Security Command Center](https://cloud.google.com/security-command-center/docs/how-to-configure-security-command-center)
-
-### To Do
-Expand to alert on submodules that are not enables. 
-
-Remove sleep when quota has been updated.

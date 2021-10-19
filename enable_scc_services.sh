@@ -34,10 +34,8 @@ function check_variables () {
 function enable_organization () {
     for service in ${services[*]}; do
         gcloud alpha scc settings services enable --service=$service --organization=$org_id
-        sleep 60
         for module in $(gcloud alpha scc settings services describe --service=$service --organization=$org_id --format=json |jq -r  ".modules |keys[]");do
             gcloud alpha scc settings services modules enable --module=$module --service=$service --organization=$org_id
-            sleep 60
         done
     done
 }
@@ -46,10 +44,8 @@ function enable_folders () {
     for folder in $(gcloud asset search-all-resources --asset-types=cloudresourcemanager.googleapis.com/Folder --scope=organizations/$org_id --format='json(name.basename())' |jq -r '.[].name'); do
         for service in ${services[*]}; do
             gcloud alpha scc settings services enable --service=$service --folder=$folder
-            sleep 60
             for module in $(gcloud alpha scc settings services describe --service=$service --folder=$folder --format=json |jq -r  ".modules |keys[]");do
                 gcloud alpha scc settings services modules enable --module=$module --service=$service --folder=$folder
-                sleep 60
             done
         done
     done
@@ -59,10 +55,8 @@ function enable_projects () {
     for project in $(gcloud asset search-all-resources --asset-types=cloudresourcemanager.googleapis.com/Project --scope=organizations/$org_id --format='json(name.basename())' |jq -r '.[].name'); do
         for service in ${services[*]}; do
             gcloud alpha scc settings services enable --service=$service --project=$project
-            sleep 60
             for module in $(gcloud alpha scc settings services describe --service=$service --project=$project --format=json |jq -r  ".modules |keys[]");do
                 gcloud alpha scc settings services modules enable --module=$module --service=$service --project=$project
-                sleep 60
             done
         done
     done
