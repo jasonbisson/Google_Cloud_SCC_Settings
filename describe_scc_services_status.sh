@@ -34,7 +34,7 @@ function check_variables () {
 
 function describe_organization () {
     for service in ${services[*]}; do
-        gcloud alpha scc settings services describe --service=$service --organization=$org_id
+        gcloud alpha scc settings services describe --service=$service --organization=$org_id --format="flattened(modules,moduleEnablementState)"
         sleep 60
     done
 }
@@ -42,7 +42,7 @@ function describe_organization () {
 function describe_folders () {
     for folder in $(gcloud asset search-all-resources --asset-types=cloudresourcemanager.googleapis.com/Folder --scope=organizations/$org_id --format='json(name.basename())' |jq -r '.[].name'); do
         for service in ${services[*]}; do
-            gcloud alpha scc settings services describe --service=$service --folder=$folder
+            gcloud alpha scc settings services describe --service=$service --folder=$folder --format="flattened(modules,moduleEnablementState)"
             sleep 60
         done
     done
@@ -51,7 +51,7 @@ function describe_folders () {
 function describe_projects () {
     for project in $(gcloud asset search-all-resources --asset-types=cloudresourcemanager.googleapis.com/Project --scope=organizations/$org_id --format='json(name.basename())' |jq -r '.[].name'); do
         for service in ${services[*]}; do
-            gcloud alpha scc settings services describe --service=$service --project=$project
+            gcloud alpha scc settings services describe --service=$service --project=$project --format="flattened(modules,moduleEnablementState)"
             sleep 60
         done
     done

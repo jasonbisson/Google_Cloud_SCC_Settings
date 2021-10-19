@@ -11,6 +11,8 @@ https://cloud.google.com/sdk/docs/
 
 ### Require security command center permissions 
 ```
+cloudasset.assets.searchAllResources
+
 securitycenter.containerthreatdetectionsettings.calculate
 securitycenter.containerthreatdetectionsettings.update
 
